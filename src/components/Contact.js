@@ -1,11 +1,20 @@
 import React from 'react'
 import { Cookies } from 'react-cookie';
+import CookieConsent, { getCookieConsentValue } from "react-cookie-consent";
 
 const cookies = new Cookies();
 
 class Contact extends React.Component {
+  cookieConsentAccepted() {
+    return getCookieConsentValue() === 'true';
+  }
+
   contactMessageSent() {
     return cookies.get('contactMessageSent') || false;
+  }
+
+  renderForm() {
+    return this.cookieConsentAccepted() && !this.contactMessageSent();
   }
 
   handleSubmit = async (event) => {
@@ -90,9 +99,35 @@ class Contact extends React.Component {
   }
 
   renderContactMessageSent() {
+    const messageSentCookieValue = this.contactMessageSent();
+    const messageSentDate = new Date(messageSentCookieValue);
+    const messageSentTimeFormatted = messageSentDate.toLocaleTimeString(
+      'en-GB',
+      { hour: 'numeric', minute: 'numeric' }
+    );
+    const messageSentDateFormatted = messageSentDate.toLocaleDateString(
+      'en-GB',
+      { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
+    );
+
+    return (
+      <div>
+        <h3>Message sent at {messageSentTimeFormatted} on {messageSentDateFormatted}</h3>
+        <p>Thanks for contacting us, we will be in touch shortly.</p>
+      </div>
+    );
+  }
+
+  renderNoCookieConsent() {
+    return (
+      <h3>Please accept cookies to use the contact form.</h3>
+    );
+  }
+
+  renderNoForm() {
     return (
       <div id="contact" className="inner">
-        <h3>Thank you for your message. We will be in touch shortly.</h3>
+        {this.cookieConsentAccepted() ? this.renderContactMessageSent() : this.renderNoCookieConsent()}
       </div>
     );
   }
@@ -100,7 +135,7 @@ class Contact extends React.Component {
   render() {
     return (
       <section id="contact">
-        {this.contactMessageSent() ? this.renderContactMessageSent() : this.renderContactForm()}
+        {this.renderForm() ? this.renderContactForm() : this.renderNoForm()}
       </section>
     );
   }

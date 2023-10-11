@@ -36,6 +36,10 @@ class Layout extends React.Component {
         })
     }
 
+    handleAcceptCookies = async(event) => {
+      this.forceUpdate();
+    }
+
     render() {
         const { children } = this.props
 
@@ -48,7 +52,7 @@ class Layout extends React.Component {
                     <Footer />
                 </div>
                 <Menu onToggleMenu={this.handleToggleMenu} />
-                <CookieConsent>This website uses cookies to enhance the user experience.</CookieConsent>
+                <CookieConsent onAccept={this.handleAcceptCookies}>This website uses cookies to enhance the user experience.</CookieConsent>
             </div>
         )
     }
