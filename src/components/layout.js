@@ -1,4 +1,5 @@
 import React from 'react'
+import CookieConsent, { Cookies } from "react-cookie-consent";
 import PropTypes from 'prop-types'
 
 import '../assets/scss/main.scss'
@@ -47,6 +48,7 @@ class Layout extends React.Component {
                     <Footer />
                 </div>
                 <Menu onToggleMenu={this.handleToggleMenu} />
+                <CookieConsent>This website uses cookies to enhance the user experience.</CookieConsent>
             </div>
         )
     }
