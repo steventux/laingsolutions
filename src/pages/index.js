@@ -8,8 +8,6 @@ import pic01 from '../assets/images/pic01.jpg'
 import pic02 from '../assets/images/pic02.jpg'
 import pic03 from '../assets/images/pic03.jpg'
 import pic04 from '../assets/images/pic04.jpg'
-import pic05 from '../assets/images/pic05.jpg'
-import pic06 from '../assets/images/pic06.jpg'
 
 class HomeIndex extends React.Component {
     render() {
@@ -17,10 +15,10 @@ class HomeIndex extends React.Component {
         return (
             <Layout>
                 <Helmet
-                    title="Gatsby Starter - Forty"
+                    title="Laing Solutions Ltd. - Bespoke digital software development and consultancy services."
                     meta={[
-                        { name: 'description', content: 'Sample' },
-                        { name: 'keywords', content: 'sample, something' },
+                        { name: 'description', content: 'Bespoke digital software development and consultancy services.' },
+                        { name: 'keywords', content: 'digital transformation, development, developer, agile, nodejs, ruby, rails' },
                     ]}
                 >
                 </Helmet>
@@ -28,58 +26,49 @@ class HomeIndex extends React.Component {
                 <Banner />
 
                 <div id="main">
-                    <section id="one" className="tiles">
+                    <section id="clients" className="tiles">
                         <article style={{backgroundImage: `url(${pic01})`}}>
                             <header className="major">
-                                <h3>Aliquam</h3>
-                                <p>Ipsum dolor sit amet</p>
+                                <h3>Department for Education</h3>
+                                <p>Development of the 'Apply for Teacher Training' service for DfE along with other supporting public services.</p>
                             </header>
-                            <Link to="/landing" className="link primary"></Link>
+                            <Link to="https://www.apply-for-teacher-training.service.gov.uk" className="link primary"></Link>
                         </article>
                         <article style={{backgroundImage: `url(${pic02})`}}>
                             <header className="major">
-                                <h3>Tempus</h3>
-                                <p>feugiat amet tempus</p>
+                                <h3>Government Digital Service</h3>
+                                <p>Providing development resource to Government Digital Services on the GOV.UK programme.</p>
+                                <p>Working with GDS since the beta phase of the award winning GOV.UK website and associated services.</p>
+                                <p>This programme revolutionised the digital landscape of government services by placing citizen's needs at the heart of the transformation process.</p>
                             </header>
-                            <Link to="/landing" className="link primary"></Link>
+                            <Link to="https://www.gov.uk" className="link primary"></Link>
                         </article>
                         <article style={{backgroundImage: `url(${pic03})`}}>
                             <header className="major">
-                                <h3>Magna</h3>
-                                <p>Lorem etiam nullam</p>
+                                <h3>BOXT</h3>
+                                <p>Full stack development of the BOXT 'Offers' feature.</p>
                             </header>
-                            <Link to="/landing" className="link primary"></Link>
+                            <Link to="https://www.boxt.co.uk" className="link primary"></Link>
                         </article>
                         <article style={{backgroundImage: `url(${pic04})`}}>
                             <header className="major">
-                                <h3>Ipsum</h3>
-                                <p>Nisl sed aliquam</p>
+                                <h3>Airslie - Kings College Hospital</h3>
+                                <p>Airslie is a company set up by doctors to produce a clinical information system for renal units.</p>
+                                <p>Services included development of features for 'Renalware', a clinical application based on the National Early Warning Score.</p>
                             </header>
-                            <Link to="/landing" className="link primary"></Link>
-                        </article>
-                        <article style={{backgroundImage: `url(${pic05})`}}>
-                            <header className="major">
-                                <h3>Consequat</h3>
-                                <p>Ipsum dolor sit amet</p>
-                            </header>
-                            <Link to="/landing" className="link primary"></Link>
-                        </article>
-                        <article style={{backgroundImage: `url(${pic06})`}}>
-                            <header className="major">
-                                <h3>Etiam</h3>
-                                <p>Feugiat amet tempus</p>
-                            </header>
-                            <Link to="/landing" className="link primary"></Link>
+                            <Link to="https://www.airslie.com" className="link primary"></Link>
                         </article>
                     </section>
-                    <section id="two">
+                    <section id="background">
                         <div className="inner">
                             <header className="major">
-                                <h2>Massa libero</h2>
+                                <h2>Background</h2>
                             </header>
-                            <p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet pharetra et feugiat tempus.</p>
+                            <p>Laing Solutions started providing software development consultancy services in 2007.</p>
+                            <p>Since then we have worked with a number of clients in the public and private sectors.</p>
+                            <p>We specialise in agile development using industry leading technologies such as Ruby on Rails and NodeJS.</p>
                             <ul className="actions">
-                                <li><Link to="/landing" className="button next">Get Started</Link></li>
+                                <li><Link to="#contact" className="button next">Contact us</Link></li>
                             </ul>
                         </div>
                     </section>
